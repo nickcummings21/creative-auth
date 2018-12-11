@@ -13,24 +13,31 @@
 
     <h1>Main</h1>
 
-    <button onclick="user={}; checkUser()">Logout</button>
+    <button onclick="logout()">Logout</button>
 
 
     <script>
 
-        let user = {};
+        let user = {username: '', password: ''};
 
         function checkUser() {
-            console.log('Checking user', user);
+            console.log('Checking user');
 
             if (localStorage.user === undefined) {
                 window.location = '/login.html';
             }
 
             let user = JSON.parse(localStorage.user);
+            console.log(user);
+
             if(user === {} || user.username === undefined || user.username === '') {
                 window.location = '/login.html';
             }
+        }
+
+        function logout() {
+            localStorage.user = '';
+            window.location = '/login.html';
         }
 
     </script>
