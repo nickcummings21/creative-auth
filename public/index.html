@@ -21,6 +21,8 @@
         let user = {};
 
         function checkUser() {
+            console.log('Checking user', user);
+
             if (localStorage.user === undefined) {
                 window.location = 'login.html';
             }
