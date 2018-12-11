@@ -4,14 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">\
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous">
+    </script>
 
     <title>User Login</title>
 </head>
 <body>
 
+    <h1>Login</h1>
 
+    <label for="username-input"></label>
+    <input type="text" id="username-input">
+    <label for="pwd-input"></label>
+    <input type="password" id="pwd-input">
+
+    <button onclick="login()">login</button>
+
+
+    <script>
+
+        let usernameInputEl = document.getElementById('username-input');
+        let pwdInputEl = docuemnt.getElementById('pwd-input');
+
+        function login() {
+            // localStorage.user = JSON.stringify({ name: 'John'});
+            // window.location = '/';
+
+            let username = usernameInputEl.value;
+            let pwd = pwdInputEl.value;
+
+            if (username === '' || pwd === '') {
+                alert('Invalid username or password.');
+            }
+
+            let query = '/get-user?username=' + username + 'pkey=' + pwd;
+            $.getJSON(query, function (data) {
+                console.log(data);
+            });
+        }
+
+    </script>
 
 </body>
 </html>

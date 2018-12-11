@@ -9,8 +9,29 @@
 
     <title>Main</title>
 </head>
-<body>
+<body onbeforeprint="checkUser()">
 
+    <h1>Main</h1>
+
+    <button onclick="user={}; checkUser()">Logout</button>
+
+
+    <script>
+
+        let user = {};
+
+        function checkUser() {
+            if (localStorage.user === undefined) {
+                window.location = 'login.html';
+            }
+
+            let user = JSON.parse(localStorage.user);
+            if(user.username === undefined || user.username === '') {
+                window.location = 'login.html';
+            }
+        }
+
+    </script>
 
 </body>
 </html>
