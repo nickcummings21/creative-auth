@@ -7,18 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
-    <title>Main</title>
+    <title>Doc</title>
 </head>
 <body onload="checkUser()">
 
-    <h1>Main</h1>
-
-    <button onclick="logout()">Logout</button>
-
 
     <script>
-
-        let user = '';
 
         function checkUser() {
             console.log('Checking user', localStorage.user);
@@ -31,11 +25,8 @@
             if(user === undefined || user === '') {
                 window.location = '/login.html';
             }
-        }
 
-        function logout() {
-            localStorage.user = '';
-            window.location = '/login.html';
+            window.location = '/main.html';
         }
 
     </script>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Main</title>
+</head>
+<body>
+
+    <h1>Main</h1>
+
+    <button onclick="logout()">Logout</button>
+
+    <script>
+
+        function logout() {
+            localStorage.user = '';
+            window.location = '/login.html';
+        }
+
+    </script>
+
+</body>
+</html>
