@@ -24,12 +24,12 @@
             console.log('Checking user', user);
 
             if (localStorage.user === undefined) {
-                window.location = 'login.html';
+                window.location = '/login.html';
             }
 
             let user = JSON.parse(localStorage.user);
-            if(user.username === undefined || user.username === '') {
-                window.location = 'login.html';
+            if(user === {} || user.username === undefined || user.username === '') {
+                window.location = '/login.html';
             }
         }
 
