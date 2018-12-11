@@ -39,6 +39,7 @@
 
             if (username === '' || pwd === '') {
                 alert('Invalid username or password.');
+                return;
             }
 
             let query = '/get-user?username=' + username + 'pkey=' + pwd;
