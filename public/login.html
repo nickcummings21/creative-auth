@@ -23,6 +23,7 @@
     <input type="password" id="pwd-input">
 
     <button onclick="login()">login</button>
+    <button onclick="register()">register</button>
 
 
     <script>
@@ -42,9 +43,34 @@
                 return;
             }
 
-            let query = '/get-user?username=' + username + 'pkey=' + pwd;
+            let query = '/get-user?username=' + username + '&pkey=' + pwd;
             $.getJSON(query, function (data) {
                 console.log(data);
+            });
+        }
+
+        function register() {
+
+            let username = usernameInputEl.value;
+            let pwd = pwdInputEl.value;
+
+            if (username === '' || pwd === '') {
+                alert('Invalid username or password.');
+                return;
+            }
+
+            $.ajax({
+                url: "register",
+                type: "POST",
+                data: JSON.stringify({ username: username, password: pwd }),
+                contentType: "application/json; charset=utf-8",
+                success: function(data, textStatus) {
+                    console.log('Registered: ' + data);
+
+                    localStorage.user = JSON.stringify({ username: username, password: pwd });
+                    console.log(localStorage.user);
+                    window.location = "/";
+                }
             });
         }
 
