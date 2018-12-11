@@ -18,19 +18,17 @@
 
     <script>
 
-        let user = {username: '', password: ''};
+        let user = '';
 
         function checkUser() {
-            console.log('Checking user');
+            console.log('Checking user', localStorage.user);
 
             if (localStorage.user === undefined) {
                 window.location = '/login.html';
             }
 
-            let user = JSON.parse(localStorage.user);
-            console.log(user);
-
-            if(user === {} || user.username === undefined || user.username === '') {
+            let user = localStorage.user;
+            if(user === undefined || user === '') {
                 window.location = '/login.html';
             }
         }

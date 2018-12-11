@@ -46,6 +46,8 @@
             let query = '/get-user?username=' + username + '&pkey=' + pwd;
             $.getJSON(query, function (data) {
                 console.log(data);
+                localStorage.user = data.username;
+                window.location = '/';
             });
         }
 
