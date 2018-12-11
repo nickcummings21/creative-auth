@@ -19,11 +19,13 @@
 
             if (localStorage.user === undefined) {
                 window.location = '/login.html';
+                return;
             }
 
             let user = localStorage.user;
             if(user === undefined || user === '') {
                 window.location = '/login.html';
+                return;
             }
 
             window.location = '/main.html';
