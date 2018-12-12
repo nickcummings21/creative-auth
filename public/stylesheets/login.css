@@ -1,4 +1,8 @@
 
+body {
+    background: url("../images/Frozen-movie-poster.jpg") center/cover;
+}
+
 .login-container {
     width: 500px;
     margin: 1rem auto;
