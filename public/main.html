@@ -13,19 +13,9 @@
 </head>
 <body>
 
-    <!--<img id="image-overlay" src="images/Transparency500.png" alt="none" usemap="#frozen-map">-->
-
-    <!--<map name="frozen-map">-->
-        <!--<area shape="circle" coords="100,100,10" href="#" alt="" onclick="playSong()">-->
-    <!--</map>-->
-
     <div class="main-title">
         <p>Click on a character's name to hear a song!</p>
 
-        <!--<div class="row">-->
-            <!--<button class="elsas-face" onclick="playSong('elsa')">Elsa</button>-->
-            <!--<button class="annas-face" onclick="playSong('anna')">Anna</button>-->
-        <!--</div>-->
         <div class="row">
             <button onclick="playSong('elsa')">Elsa</button>
             <button onclick="playSong('anna')">Anna</button>
@@ -57,15 +47,6 @@
             localStorage.user = '';
             window.location = '/login.html';
         }
-
-        let characterSongs = {
-            'elsa': 'music/Idina Menzel - Let It Go.mp3',
-            'anna': 'music/Agatha Lee Monn - Do You Want To Build a Snowman_.mp3',
-            'kristoff': 'music/Maia Wilson - Fixer Upper.mp3',
-            'olaf': 'music/Josh Gad - In Summer.mp3',
-            'hans': 'music/Kristen Bell - For the First Time In Forever.mp3',
-            'sven': 'music/Jonathan Groff - Reindeer(s) Are Better Than People.mp3'
-        };
 
         let activeSongEl = null;
 
