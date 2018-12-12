@@ -37,6 +37,7 @@ body {
     border-radius: 8px;
     padding: .5rem 2rem;
     margin: 0 1rem;
+    width: 100px;
     background-color: deepskyblue;
     border: 1px solid deepskyblue;
     color: floralwhite;
