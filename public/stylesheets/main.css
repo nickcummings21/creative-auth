@@ -1,7 +1,73 @@
 
-body {
-    background: url("../images/frozen-characters.jpg") center/cover;
+html {
+    /*height: 100vh;*/
 }
 
+body {
+    background: url("../images/Frozen_castposter.jpg") left 50% bottom 82%;
+    background-size: cover;
+    /*height: 100vh;*/
+}
 
+/*#image-overlay {*/
+    /*position: fixed;*/
+    /*width: 100vw;*/
+    /*height: 100vh;*/
+/*}*/
+
+.main-title {
+    text-align: center;
+    width: 400px;
+    margin: 2rem 68% 0 2%;
+    padding: 1rem .5rem;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, .8);
+}
+
+.row {
+    text-align: center;
+    margin: .5rem;
+    height: 40px;
+}
+
+.main-title button {
+    display: inline-block;
+    outline: none !important;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: .5rem 2rem;
+    margin: 0 1rem;
+    background-color: deepskyblue;
+    border: 1px solid deepskyblue;
+    color: floralwhite;
+}
+
+.main-title button:hover {
+    background-color: floralwhite;
+    color: deepskyblue;
+}
+
+audio {
+    display: none;
+}
+
+.stop-btn {
+    background-color: red !important;
+    border: 1px solid red !important;
+}
+
+.stop-btn:hover {
+    background-color: floralwhite !important;
+    color: red !important;
+}
+
+.exit-btn {
+    background-color: black !important;
+    border: 1px solid black !important;
+}
+
+.exit-btn:hover {
+    background-color: floralwhite !important;
+    color: black !important;
+}
 

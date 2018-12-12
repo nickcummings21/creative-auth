@@ -6,19 +6,81 @@
           content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+
     <title>Main</title>
 </head>
 <body>
 
-    <h1>Main</h1>
+    <!--<img id="image-overlay" src="images/Transparency500.png" alt="none" usemap="#frozen-map">-->
 
-    <button onclick="logout()">Logout</button>
+    <!--<map name="frozen-map">-->
+        <!--<area shape="circle" coords="100,100,10" href="#" alt="" onclick="playSong()">-->
+    <!--</map>-->
+
+    <div class="main-title">
+        <p>Click on a character's name to hear a song!</p>
+
+        <!--<div class="row">-->
+            <!--<button class="elsas-face" onclick="playSong('elsa')">Elsa</button>-->
+            <!--<button class="annas-face" onclick="playSong('anna')">Anna</button>-->
+        <!--</div>-->
+        <div class="row">
+            <button onclick="playSong('elsa')">Elsa</button>
+            <button onclick="playSong('anna')">Anna</button>
+        </div>
+        <div class="row">
+            <button onclick="playSong('olaf')">Olaf</button>
+            <button onclick="playSong('sven')">Sven</button>
+        </div>
+        <div class="row">
+            <button onclick="playSong('kris')">Kris</button>
+            <button onclick="playSong('hans')">Hans</button>
+        </div>
+        <div class="row">
+            <button class="exit-btn" onclick="logout()">Exit</button>
+            <button class="stop-btn" onclick="stopPlayback()">Stop</button>
+        </div>
+    </div>
+
+    <audio id="elsa-song" src="music/Idina Menzel - Let It Go.mp3"></audio>
+    <audio id="anna-song" src="music/Agatha Lee Monn - Do You Want To Build a Snowman_.mp3"></audio>
+    <audio id="kris-song" src="music/Maia Wilson - Fixer Upper.mp3"></audio>
+    <audio id="olaf-song" src="music/Josh Gad - In Summer.mp3"></audio>
+    <audio id="hans-song" src="music/Kristen Bell - For the First Time In Forever.mp3"></audio>
+    <audio id="sven-song" src="music/Jonathan Groff - Reindeer(s) Are Better Than People.mp3"></audio>
 
     <script>
 
         function logout() {
             localStorage.user = '';
             window.location = '/login.html';
+        }
+
+        let characterSongs = {
+            'elsa': 'music/Idina Menzel - Let It Go.mp3',
+            'anna': 'music/Agatha Lee Monn - Do You Want To Build a Snowman_.mp3',
+            'kristoff': 'music/Maia Wilson - Fixer Upper.mp3',
+            'olaf': 'music/Josh Gad - In Summer.mp3',
+            'hans': 'music/Kristen Bell - For the First Time In Forever.mp3',
+            'sven': 'music/Jonathan Groff - Reindeer(s) Are Better Than People.mp3'
+        };
+
+        let activeSongEl = null;
+
+        function playSong(characterName) {
+            if (activeSongEl != null) activeSongEl.pause();
+
+            let audioEl = document.getElementById(characterName + '-song');
+            audioEl.load();
+            audioEl.loop = false;
+            audioEl.play();
+            activeSongEl = audioEl;
+        }
+
+        function stopPlayback() {
+            if (activeSongEl != null) activeSongEl.pause();
         }
 
     </script>
