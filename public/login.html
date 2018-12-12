@@ -18,16 +18,24 @@
 </head>
 <body>
 
-    <h1>Login</h1>
+    <div class="login-container">
+        <h1>Login</h1>
 
-    <label for="username-input"></label>
-    <input type="text" id="username-input">
-    <label for="pwd-input"></label>
-    <input type="password" id="pwd-input">
+        <div class="row">
+            <label for="username-input"></label>
+            <input type="text" id="username-input">
+        </div>
 
-    <button onclick="login()">login</button>
-    <button onclick="register()">register</button>
+        <div class="row">
+            <label for="pwd-input"></label>
+            <input type="password" id="pwd-input">
+        </div>
 
+        <div class="row">
+            <button onclick="login()">login</button>
+            <button onclick="register()">register</button>
+        </div>
+    </div>
 
     <script>
 
